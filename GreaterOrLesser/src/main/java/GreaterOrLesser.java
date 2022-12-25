@@ -11,11 +11,11 @@ public class GreaterOrLesser {
      */
     public String decide(int a, int b){
        if(a < b) {
-        return String decide;
+        return String;
        }else if(a > b) {
-        return String decide;
+        return decide;
        }else {
-        return String decide;
+        return decide;
        }
     }
 }
