@@ -32,6 +32,9 @@ public class Player {
      */
     public Player(String playerName){
 
+        this.playerName = playerName;
+        this.level = 1;
+
     }
 
     /**
@@ -52,7 +55,6 @@ public class Player {
         this.playerName = (playerName);
         this.level = (level);
 
-        //Player newPlayer = new Player(playerName, level);
     }
 
 }
