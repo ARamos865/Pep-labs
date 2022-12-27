@@ -49,6 +49,10 @@ public class Player {
      */
     public Player(String playerName, int level){
 
+        this.playerName = (playerName);
+        this.level = (level);
+
+        //Player newPlayer = new Player(playerName, level);
     }
 
 }
