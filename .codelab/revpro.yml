@@ -326,6 +326,7 @@
     :count_tests_passed: 0
     :tests:
       customExceptionTest1: 0
+      CustomExceptionTest: 0
   Lists:
     :Week: 3
     :Order: 4
