@@ -1,5 +1,5 @@
 
-public class CauseUncheckedException extends RuntimeException {
+public class CauseUncheckedException {
     /**
      * This method must throw an unchecked exception.
      * unchecked means that you do not need to wrap the method in a try/catch or a throws declaration.
@@ -13,11 +13,8 @@ public class CauseUncheckedException extends RuntimeException {
      * Notice that errors are separate from exceptions. Errors are external to Java and can occur when some external
      * event happens, like running out of computer memory.
      */
-    public CauseUncheckedException(String message) {
-        super(message);
-    }
     
-     public void throwUncheckedException()throws Exception {
-
+     public void throwUncheckedException() {
+        throw new RuntimeException();
     }
 }
