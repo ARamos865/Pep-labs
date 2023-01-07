@@ -10,13 +10,8 @@ public class CustomExceptionThrower extends Exception {
      * @throws Exception
      */ 
        
-     public void throwCustomException() throws CustomExceptionThrower {
-        CustomExceptionThrower foo = new CustomExceptionThrower(); 
-        try {
-            
-          } catch (CustomExceptionThrower e) {
-            e.printStackTrace();
-          }
+     public void throwCustomException() throws CustomException {
+        throw new CustomException("");
     }
 
 }
