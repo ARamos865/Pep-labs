@@ -39,7 +39,7 @@ public class StackExercise {
      * @param item a String to be added to the deque.
      */
     public void addToTopOfStack(Deque<String> stack, String item){
-        stack.add(item);
+        stack.addFirst(item);
     }
 
     /**
