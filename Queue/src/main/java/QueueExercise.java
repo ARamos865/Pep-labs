@@ -2,6 +2,7 @@
  * TODO: switch to deque
  */
 
+import java.util.ArrayDeque;
 import java.util.Queue;
 
 /**
@@ -29,7 +30,8 @@ public class QueueExercise {
      * Stack behavior.
      */
     public Queue<String> createQueue(){
-        return null;
+        Queue<String> cQueue = new ArrayDeque<String>();
+        return cQueue;
     }
 
     /**
@@ -38,7 +40,7 @@ public class QueueExercise {
      * @return the length of queue.
      */
     public int getSize(Queue<String> queue){
-        return 0;
+        return queue.size();
     }
 
     /**
@@ -48,7 +50,7 @@ public class QueueExercise {
      * @param item a String that should be added to Queue.
      */
     public void addToEndOfQueue(Queue<String> queue, String item){
-
+        queue.add(item);
     }
 
     /**
@@ -58,7 +60,7 @@ public class QueueExercise {
      * @return the next String due to be removed (polled) from the Queue<String> (the oldest item in the queue.)
      */
     public String removeFromStartOfQueue(Queue<String> queue){
-        return "";
+        return queue.poll();
     }
 
     /**
@@ -67,6 +69,6 @@ public class QueueExercise {
      * @return the next String due to be removed (peeked) from the Queue<String> (the oldest item in the queue.)
      */
     public String getStartOfQueueWithoutRemoving(Queue<String> queue){
-        return "";
+        return queue.peek();
     }
 }
