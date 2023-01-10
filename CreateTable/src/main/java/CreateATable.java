@@ -63,18 +63,28 @@ public class CreateATable {
      *     |'Kashmir'          |'Led Zeppelin'         |
      */
    
+    CREATE DATABASE IAM;
+
+    USE IAM;
+
     CREATE TABLE songs (
     title varchar(100) not null, 
     artist varchar(100) not null
     );
+ALTER TABLE songs ADD COlUMN 
    
      public void problem1(){
         String sql = FileUtil.parseSQLFile("problem1.sql");
 
+        String sql = "CREATE TABLE songs" +
+               "(title varchar(100) not null," + 
+                "artist varchar(100) not null)";
+
         try {
             Connection connection = ConnectionUtil.getConnection();
-            Statement s = connection.createStatement();
+            Statement s = connection.createStatement();                
             s.executeUpdate(sql);
+       
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
         }
