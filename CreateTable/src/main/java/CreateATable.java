@@ -62,7 +62,13 @@ public class CreateATable {
      *     |'Hotel California' |'Eagles'               |
      *     |'Kashmir'          |'Led Zeppelin'         |
      */
-    public void problem1(){
+   
+    CREATE TABLE songs (
+    title varchar(100) not null, 
+    artist varchar(100) not null
+    );
+   
+     public void problem1(){
         String sql = FileUtil.parseSQLFile("problem1.sql");
 
         try {
