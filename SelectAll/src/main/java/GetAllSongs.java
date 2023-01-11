@@ -36,20 +36,25 @@ public class GetAllSongs {
 
         String sql = FileUtil.parseSQLFile("problem1.sql");
 
-
+        
         List<Song> songs = new ArrayList<>();
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
-            ResultSet rs =s.executeQuery(sql);
+            
+            s.executeUpdate(sql);
+            String sql1 = "SELECT * FROM songs;";
+            s.executeUpdate(sql1);
+            
+            ResultSet rs =s.executeQuery(sql1);
 
             while(rs.next()){
-                songs.add(new Song(rs.getString(1), rs.getString(2)));
+                songs.add(new Song(rs.getString("title"), rs.getString("artist")));
             }
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
         }
-
+        
         return songs;
     }
 }
