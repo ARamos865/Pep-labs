@@ -35,17 +35,15 @@ public class GetAllSongs {
     public List<Song> problem1(){
 
         String sql = FileUtil.parseSQLFile("problem1.sql");
-
+        
         
         List<Song> songs = new ArrayList<>();
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            s.executeQuery(sql);
             
-            String sql1 = "SELECT * FROM songs;";
-            s.executeQuery(sql1);
-            
-            ResultSet rs =s.executeQuery(sql1);
+            ResultSet rs =s.executeQuery(sql);
 
             while(rs.next()){
                 songs.add(new Song(rs.getString("title"), rs.getString("artist")));
