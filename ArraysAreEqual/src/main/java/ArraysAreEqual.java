@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 //see test cases.
 public class ArraysAreEqual {
     /**
