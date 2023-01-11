@@ -42,9 +42,8 @@ public class GetAllSongs {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
             
-            s.executeUpdate(sql);
             String sql1 = "SELECT * FROM songs;";
-            s.executeUpdate(sql1);
+            s.executeQuery(sql1);
             
             ResultSet rs =s.executeQuery(sql1);
 
