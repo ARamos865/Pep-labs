@@ -63,27 +63,23 @@ public class CreateATable {
      *     |'Kashmir'          |'Led Zeppelin'         |
      */
    
-    CREATE DATABASE IAM;
-
-    USE IAM;
-
-    CREATE TABLE songs (
-    title varchar(100) not null, 
-    artist varchar(100) not null
-    );
-ALTER TABLE songs ADD COlUMN 
+    
    
      public void problem1(){
         String sql = FileUtil.parseSQLFile("problem1.sql");
-
-        String sql = "CREATE TABLE songs" +
-               "(title varchar(100) not null," + 
-                "artist varchar(100) not null)";
 
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();                
             s.executeUpdate(sql);
+
+            String sql1 = "CREATE TABLE song (title varchar(100), artist varchar(100));";
+            String sql2 = "INSERT INTO song VALUES ('Let It Be', 'Beatles');";
+            String sql3 = "INSERT INTO song VALUES ('Hotel California', 'Eagles');";
+            String sql4 = "INSERT INTO song VALUES ('Kashmir', 'Led Zeppelin');";
+            
+            s.executeUpdate(sql1 + sql2 + sql3 + sql4);
+
        
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
