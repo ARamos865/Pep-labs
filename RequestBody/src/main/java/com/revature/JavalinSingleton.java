@@ -17,7 +17,21 @@ public class JavalinSingleton {
          * Note: Please refer to the "RequestBody.MD" file for more assistance if needed.
          */
         app.post("/problem1", ctx -> {
-                //implement logic here
+                String jsonString = ctx.body();
+
+                ObjectMapper om = new ObjectMapper();
+
+                problem1 sn = om.readValue(jsonString, problem1.class);
+
+                problem1 an = om.readValue(jsonString, problem1.class);
+
+                String jsonToBeReturned = om.writeValueAsString(sn);
+
+                ctx.result(jsonToBeReturned);
+
+                String jsonToBeReturnedA = om.writeValueAsString(an);
+
+                ctx.result(jsonToBeReturnedA);
         });
 
         /**
@@ -28,7 +42,18 @@ public class JavalinSingleton {
          * Note: Please refer to the "RequestBody.MD" file for more assistance if needed.
          */
         app.post("/problem2", ctx -> {
-               //implement logic here
+            String jsonString = ctx.body();
+
+            ObjectMapper om = new ObjectMapper();
+            problem2 user = om.readValue(jsonString, problem2.class);
+        
+            ctx.contentType("application/songName"); 
+        
+            user.setLastname("Beatles");
+            
+            String jsonStringToBeReturned = om.writeValueAsString(user);
+        
+            ctx.result(jsonStringToBeReturned);
         });
 
 
