@@ -107,7 +107,7 @@ public class FlightDAO {
      *
      * @param flight an object modelling a Flight.
      */
-    public static Flight insertFlight(Flight flight){
+    public Flight insertFlight(Flight flight){
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here. When inserting, you only need to define the departure_city and arrival_city
@@ -116,9 +116,8 @@ public class FlightDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             //write preparedStatement's setString and setInt methods here.
-            preparedStatement.setString(1, flight.getDeparture_city());
-            preparedStatement.setInt(3, flight.getFlight_id());
-            preparedStatement.setString(2, flight.getArrival_city());
+            preparedStatement.setString(1, flight.departure_city);
+            preparedStatement.setString(2, flight.arrival_city);
 
             preparedStatement.executeUpdate();
             ResultSet pkeyResultSet = preparedStatement.getGeneratedKeys();
