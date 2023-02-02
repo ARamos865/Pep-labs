@@ -41,7 +41,7 @@ public class Application {
                     "isbn int primary key, " +
                     "author_id int, "+
                     "title varchar(255), " +
-                    "copies_available varchar(255), " +
+                    "copies_available int, " +
                     "foreign key (author_id) references author(id));");
             ps4.executeUpdate();
             PreparedStatement ps5 = conn.prepareStatement(
